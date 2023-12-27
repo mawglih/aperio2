@@ -4,25 +4,25 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const commonConfig = require('./webpack.common');
 
 const devConfig = {
-    mode: 'development',
-    devServer: {
-        port: 8081,
-        historyApiFallback: {
-            index: 'index.html'
-        }
+  mode: 'development',
+  devServer: {
+    port: 8081,
+    historyApiFallback: {
+      index: 'index.html',
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './public/index.html'
-        }),
-        new ModuleFederationPlugin({
-            name: 'app1',
-            filename: 'remoteEntry.js',
-            exposes: {
-                './App1': './src/bootstrap',
-            },
-        }),
-    ],
+  },
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'marketing',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './MarketingApp': './src/test',
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
 };
 
 module.exports = merge(commonConfig, devConfig);

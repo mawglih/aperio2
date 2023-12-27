@@ -1,11 +1,13 @@
 import React from 'react';
-import { mount } from 'app1/App1';
+import App1  from './components/App1';
 
 const App = () => {
-    const Marketing = async () => await mount();
-    console.log(Marketing);
-    return(
-        <h1>Container</h1>
+    return (
+        <div>
+            <h1>Container</h1>
+            {/* <App1 /> */}
+        </div>
+        
     )
 }
 
