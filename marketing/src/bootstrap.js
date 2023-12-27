@@ -12,4 +12,5 @@ if(process.env.NODE_ENV === 'development') {
         mount(devRoot);
     }
 };
-export { mount };
+
+export {mount};
