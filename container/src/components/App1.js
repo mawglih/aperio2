@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from 'react';
 const App1 = () => {
     const ref = useRef(null);
     useEffect(() => {
-        // mount(ref.current);
+        mount(ref.current);
     });
     return <div ref={ref} />;
 }
